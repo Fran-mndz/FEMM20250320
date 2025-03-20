@@ -35,7 +35,7 @@ public partial class User
     [StringLength(40, MinimumLength = 5, ErrorMessage = "El password debe tener entre 5 y 50 caracteres.")]
     [Display(Name = "Confirmar Password")]
     [DataType(DataType.Password)]
-    [Compare("Password", ErrorMessage = "Las contraseñas no coinciden.")]
+    [Compare("PasswordHash", ErrorMessage = "Las contraseñas no coinciden.")]
     public string? ConfirmarPassword { get; set; } = null!;
 
 }

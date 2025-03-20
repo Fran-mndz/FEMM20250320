@@ -16,7 +16,8 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace FEMM20250320.WebAppMVC.Controllers
 {
-    [Authorize(Roles = "ADMINISTRADOR")]
+    //[Authorize(Roles = "ADMINISTRADOR")]
+    [AllowAnonymous]
     public class UsersController : Controller
     {
         private readonly Test20250320DbContext _context;
