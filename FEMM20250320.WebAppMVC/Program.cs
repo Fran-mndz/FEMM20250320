@@ -1,5 +1,6 @@
 using FEMM20250320.WebAppMVC.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,15 @@ builder.Services.AddDbContext<Test20250320DbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Conn"));
 });
+/*builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie((o) =>
+{
+    o.LoginPath = new PathString("/Usuarios/login");
+    o.AccessDeniedPath = new PathString("/Usuarios/login");
+    o.ExpireTimeSpan = TimeSpan.FromHours(8);
+    o.SlidingExpiration = true;
+    o.Cookie.HttpOnly = true;
+});*/
+
 
 var app = builder.Build();
 
